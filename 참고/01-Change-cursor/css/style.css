@@ -1,0 +1,70 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+.wrap {
+  width: 70%;
+  margin: 0 auto;
+  background: #ff5;
+  padding: 50px;
+  line-height: 1.5;
+}
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33px;
+  height: 33px;
+  background: url(../images/hover-2.png) no-repeat 0 0;
+
+  /* 마우스 커서와 관련없게 */
+  pointer-events: none;
+  /* 사용자가 선택할수 없게 */
+  user-select: none;
+}
+
+.cursor.click {
+  background-position: -33px 0;
+}
+
+body,
+a,
+a:hover {
+  cursor: none;
+}
+
+.spark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  pointer-events: none;
+  user-select: none;
+  transition: 0.4s;
+}
+
+.spark.click {
+  animation: sparkAni 0.4s;
+}
+
+@keyframes sparkAni {
+  100% {
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+  }
+}
