@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>splitting.js</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: 700 5vw 'Noto Sans KR', sans-serif;
+        line-height: 1.5;
+      }
+
+      /* 5. CSS Animation 만들고 적용하기 */
+      @keyframes textAni {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        30% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        35% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      [data-splitting] .char {
+        animation: textAni 1s both;
+        animation-delay: calc(60ms * var(--char-index));
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  </head>
+
+  <body>
+    <!-- https://splitting.js.org/ -->
+    <h1 data-splitting>단순하게 살아라.</h1>
+    <script>
+      Splitting();
+    </script>
+    <!-- 
+      ** 적용방법 **
+      1. css , js연결
+      2. 요소에 속성 적용
+        data-splitting
+      
+      3. 초기화 : Splitting()
+      4. 글자가 쪼개졌는지 확인
+      5. CSS Animation 만들고 적용하기
+      6. 쪼개진 글자에 적용
+     -->
+  </body>
+</html>

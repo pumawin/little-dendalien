@@ -1,0 +1,52 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+.wrap {
+  width: 70%;
+  margin: 50px auto;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  /* visibility: hidden; autoalpha사용할때는 반드시 사용해 줘야 한다. */
+}
+
+.box1 {
+  background: red;
+}
+.box2 {
+  background: blue;
+}
+.box3 {
+  background: green;
+}
+.btn {
+  padding: 30px;
+}
+
+.box4 {
+  background: orange;
+}
+.box5 {
+  background: skyblue;
+}
+.box6 {
+  background: tomato;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>svg - vivus.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <style>
+      .ex {
+        transition: 0.4s;
+        transform-origin: 50% 50%; /* trfo */
+      }
+      .box {
+        width: 800px;
+        border: 1px solid #000;
+        margin: 0 auto;
+      }
+    </style>
+    <!-- https: 절대 주소를 꼭 적어 주어야 한다. -->
+  </head>
+  <body>
+    <div class="box">
+      <svg id="myClose" viewBox="0 0 1867 1032" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1 304.5C106 264.833 314.5 219.3 308.5 354.5C302.5 489.7 160 556.833 89.5 573.5M470 127.5L493 573.5M128 1027.5C128 1009.1 102.333 824.833 89.5 735C266.167 685 594.2 633.5 493 827.5C391.8 1021.5 284.167 1041.67 243 1027.5H547M739.5 208.5C842.167 178.833 1043.6 148 1028 262C1022.22 304.205 993.473 342.412 955 375.226M739.5 489C795.971 471.261 889.552 431.047 955 375.226M955 375.226L1028 516M1243 70V489M858.5 639C843.333 764.5 841.4 1004.8 955 962C1068.6 919.2 1238 890.5 1308.5 881.5M1524 127.5C1485.67 146.833 1412.8 209.3 1428 304.5C1443.2 399.7 1531.67 433.833 1574 439C1626.67 444 1731.2 415.6 1728 262C1724.8 108.4 1603.33 90.3333 1543 100.5M1739.5 193H1866.5M1739.5 354.5H1866.5M1866.5 0.5V489M1728 516C1654.83 513.333 1521.6 548.8 1574 712C1626.4 875.2 1706.17 872.333 1739.5 850.5C1781.83 851.667 1866.5 820.2 1866.5 685C1866.5 549.8 1781.83 516 1739.5 516"
+          stroke="black"
+        />
+      </svg>
+    </div>
+
+    <script>
+      new Vivus(
+        'myClose',
+        {
+          duration: 1200,
+          type: 'oneByOne',
+        },
+        function () {
+          document.querySelector('.ex').style.transform = 'rotate(360deg)';
+        }
+      );
+    </script>
+    <!-- myClose를 넣어준다. -->
+  </body>
+</html>
